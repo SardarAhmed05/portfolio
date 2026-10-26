@@ -39,4 +39,4 @@ python3 -m http.server
 Static site, ready for Vercel: import this repository in Vercel and deploy.
 Every push to the default branch redeploys automatically.
 
-Live site: _(add the Vercel URL here after the first deploy)_
+Live site: https://sardarahmed.vercel.app/
