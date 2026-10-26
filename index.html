@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Sardar Ahmed — developer portfolio. Custom software and AI tools of every kind: websites, chatbots and AI agents, automations, and custom tools — built by a BS Artificial Intelligence student at SMIU, Karachi." />
+    <link rel="icon" href="data:," />
+    <title>Sardar Ahmed — developer portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        color-scheme: light dark;
+        --bg:#fbfbfa;
+        --surface:#ffffff;
+        --surface-2:#f3f5f2;
+        --ink:#171a18;
+        --ink-2:#3d4540;
+        --muted:#68736c;
+        --line:#e2e6e1;
+        --line-strong:#cdd4cd;
+        --accent:#0e5f4a;
+        --accent-strong:#0a4a3a;
+        --accent-soft:#e4efe9;
+        --accent-ink:#ffffff;
+        --amber:#9a6a12;
+        --amber-soft:#f6ecd4;
+        --blue:#2f5d8a;
+        --blue-soft:#e3ebf4;
+        --gray-soft:#eceeed;
+        --shadow:0 1px 2px rgba(20,30,24,.05), 0 12px 32px -16px rgba(20,30,24,.14);
+        --radius:14px;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#101312;
+          --surface:#171b19;
+          --surface-2:#1b201d;
+          --ink:#eef1ee;
+          --ink-2:#c6cec8;
+          --muted:#98a49b;
+          --line:#262c28;
+          --line-strong:#39423c;
+          --accent:#63c39c;
+          --accent-strong:#7fd2ae;
+          --accent-soft:#1d2c25;
+          --accent-ink:#0c1712;
+          --amber:#d9a94e;
+          --amber-soft:#2e2716;
+          --blue:#8ab2dd;
+          --blue-soft:#1d2836;
+          --gray-soft:#242927;
+          --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -16px rgba(0,0,0,.5);
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      @media (prefers-reduced-motion: reduce){
+        html{scroll-behavior:auto}
+        *{transition:none !important; animation:none !important}
+      }
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size:17px;
+        line-height:1.65;
+        -webkit-font-smoothing:antialiased;
+        text-rendering:optimizeLegibility;
+      }
+      p{text-wrap:pretty}
+      ::selection{background:var(--accent); color:var(--accent-ink)}
+      a{color:inherit}
+      /* Visible keyboard focus on every interactive element */
+      a:focus-visible, button:focus-visible{
+        outline:3px solid var(--accent); outline-offset:3px; border-radius:6px;
+      }
+      a:focus:not(:focus-visible), button:focus:not(:focus-visible){outline:none}
+      .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+
+      /* ---------- Nav ---------- */
+      header{
+        position:sticky; top:0; z-index:50;
+        background:var(--bg);
+        border-bottom:1px solid var(--line);
+      }
+      .nav{
+        display:flex; align-items:center; justify-content:space-between; gap:16px;
+        padding-top:15px; padding-bottom:15px;
+      }
+      .brand{font-weight:800; font-size:18px; letter-spacing:-.01em; text-decoration:none; white-space:nowrap; display:inline-flex; align-items:center; min-height:44px; padding:4px 2px}
+      .brand span{color:var(--accent)}
+      nav.main{display:flex; align-items:center; gap:6px}
+      nav.main a{
+        text-decoration:none; font-weight:600; font-size:15px; color:var(--ink-2);
+        padding:12px 13px; border-radius:8px; min-height:44px; display:inline-flex; align-items:center;
+      }
+      nav.main a:hover{color:var(--ink); background:var(--surface-2)}
+      nav.main a.nav-cta{
+        background:var(--ink); color:var(--bg); margin-left:6px; padding:9px 16px; border-radius:9px;
+      }
+      nav.main a.nav-cta:hover{background:var(--accent); color:var(--accent-ink)}
+
+      /* ---------- Hero ---------- */
+      .hero{padding:88px 0 76px; border-bottom:1px solid var(--line)}
+      .hero-meta{
+        display:flex; flex-wrap:wrap; gap:10px 12px; align-items:center;
+        font-size:13px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+        margin-bottom:32px;
+      }
+      .hero-meta .dot{width:4px; height:4px; border-radius:50%; background:var(--line-strong)}
+      .hero-meta .open{
+        color:var(--accent); background:var(--accent-soft);
+        display:inline-flex; align-items:center; gap:8px;
+        padding:6px 12px 6px 10px; border-radius:999px; letter-spacing:.05em;
+      }
+      .hero-meta .open::before{content:""; flex:none; width:8px; height:8px; border-radius:50%; background:var(--accent)}
+      h1{
+        font-size:clamp(40px, 6vw, 64px);
+        line-height:1.04; letter-spacing:-.028em; font-weight:800;
+        margin:0 0 24px; max-width:14.5em; text-wrap:balance;
+      }
+      h1 em{font-family:"Newsreader", Georgia, serif; font-style:italic; font-weight:500; letter-spacing:-.01em; color:var(--accent)}
+      .hero-sub{font-size:clamp(17.5px,2.2vw,20.5px); line-height:1.65; color:var(--ink-2); max-width:37em; margin:0 0 38px}
+      .hero-sub strong{color:var(--ink); font-weight:700}
+      .cta-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+      .btn{
+        display:inline-flex; align-items:center; gap:9px;
+        font-weight:700; font-size:16px; text-decoration:none; line-height:1.3;
+        padding:14px 26px; border-radius:11px; border:1px solid transparent;
+        transition:background .15s ease, border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+      }
+      .btn:active{transform:translateY(1px)}
+      .btn-primary{background:var(--accent); color:var(--accent-ink); box-shadow:0 8px 20px -10px rgba(14,95,74,.55)}
+      .btn-primary:hover{background:var(--accent-strong)}
+      .btn-ghost{background:var(--surface); border-color:var(--line-strong); color:var(--ink)}
+      .btn-ghost:hover{border-color:var(--ink-2); background:var(--surface-2)}
+      .hero-note{margin-top:24px; font-size:14.5px; color:var(--muted)}
+      .hero-note a{font-weight:700; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft); padding:6px 1px}
+      .hero-note a:hover{border-bottom-color:var(--accent)}
+
+      /* ---------- Sections ---------- */
+      section{padding:84px 0}
+      section[id]{scroll-margin-top:76px}
+      .sec-head{margin-bottom:44px; max-width:44em}
+      .sec-index{
+        font-family:ui-monospace, "SF Mono", Menlo, monospace;
+        font-size:12.5px; font-weight:600; color:var(--accent); letter-spacing:.1em;
+        display:block; margin-bottom:14px;
+      }
+      h2{font-size:clamp(29px,4vw,39px); line-height:1.14; letter-spacing:-.022em; font-weight:800; margin:0 0 14px; text-wrap:balance}
+      .sec-lede{color:var(--ink-2); font-size:18px; line-height:1.65; margin:0; max-width:40em}
+
+      /* ---------- What I build ---------- */
+      .build-list{border-top:1px solid var(--line)}
+      .build-row{
+        display:grid; grid-template-columns:56px 240px 1fr; gap:8px 28px;
+        padding:30px 10px; border-bottom:1px solid var(--line); align-items:baseline;
+        border-radius:4px; transition:background .15s ease;
+      }
+      .build-row:hover{background:var(--surface-2)}
+      .build-num{font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:13.5px; color:var(--muted); padding-top:4px}
+      .build-row h3{font-size:20.5px; font-weight:800; letter-spacing:-.012em; margin:0; line-height:1.3}
+      .build-row p{margin:0; color:var(--ink-2); font-size:16.5px; line-height:1.65; max-width:36em}
+
+      /* ---------- Work ---------- */
+      #work{background:var(--surface-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+      .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+      .card{
+        background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+        padding:32px; display:flex; flex-direction:column; gap:14px; box-shadow:var(--shadow);
+        transition:border-color .15s ease, box-shadow .15s ease;
+      }
+      .card:hover{border-color:var(--line-strong); box-shadow:0 2px 4px rgba(20,30,24,.05), 0 18px 40px -18px rgba(20,30,24,.2)}
+      .card.wide{grid-column:1 / -1}
+      .card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:2px}
+      .card h3{font-size:23px; font-weight:800; letter-spacing:-.018em; margin:2px 0 0; line-height:1.25}
+      .card .kind{font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0}
+      .card p.desc{margin:0; color:var(--ink-2); font-size:16.5px; line-height:1.65}
+      .card p.desc strong{color:var(--ink)}
+      .card p.prob{margin:0; color:var(--ink-2); font-size:16.5px; line-height:1.65}
+      .card .blabel{display:block; font-size:11.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:5px}
+      .card p.prob .blabel{color:var(--accent)}
+      .status{
+        flex:none; display:inline-flex; align-items:center; gap:7px;
+        font-size:12.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase;
+        padding:6px 11px; border-radius:999px; white-space:nowrap;
+      }
+      .status::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor}
+      .status.live{color:var(--accent); background:var(--accent-soft)}
+      .status.current{color:var(--accent); background:var(--accent-soft)}
+      .status.built{color:var(--amber); background:var(--amber-soft)}
+      .status.past{color:var(--muted); background:var(--gray-soft)}
+      .tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:10px}
+      .tag{
+        font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:12.5px; font-weight:600;
+        color:var(--ink-2); background:var(--surface-2); border:1px solid var(--line);
+        padding:5px 10px; border-radius:7px; line-height:1.35;
+      }
+      #work .tag{background:var(--bg)}
+
+      /* ---------- About ---------- */
+      .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:56px; align-items:start}
+      .about-copy p{margin:0 0 20px; font-size:18px; line-height:1.7; color:var(--ink-2)}
+      .about-copy p strong{color:var(--ink)}
+      .about-copy p:first-child{font-size:20.5px; line-height:1.6; color:var(--ink)}
+      .about-copy p:last-child{margin-bottom:0}
+      .facts{border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); overflow:hidden; box-shadow:var(--shadow)}
+      .facts dl{margin:0}
+      .fact{display:flex; justify-content:space-between; gap:16px; padding:16px 20px; border-bottom:1px solid var(--line)}
+      .fact:last-child{border-bottom:none}
+      .fact dt{font-size:12.5px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); padding-top:2px}
+      .fact dd{margin:0; font-weight:700; font-size:15.5px; text-align:right}
+
+      /* ---------- Skills ---------- */
+      .skills{margin-top:56px; padding-top:36px; border-top:1px solid var(--line)}
+      .skills h3{font-size:12.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 16px}
+      .skill-tags{display:flex; flex-wrap:wrap; gap:8px}
+      .skill-tags .tag{font-size:13px; padding:6px 11px}
+
+      /* ---------- Contact ---------- */
+      #contact{border-top:1px solid var(--line)}
+      .contact-box{max-width:44em}
+      .contact-box p{font-size:18px; line-height:1.65; color:var(--ink-2); margin:0 0 30px}
+      .contact-box p.avail{
+        display:inline-flex; align-items:center; gap:9px;
+        font-size:15.5px; font-weight:700; color:var(--accent);
+        background:var(--accent-soft); padding:8px 14px 8px 12px; border-radius:999px;
+        margin:0 0 24px;
+      }
+      .contact-box p.avail::before{content:""; flex:none; width:9px; height:9px; border-radius:50%; background:var(--accent)}
+      .contact-actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+      .copy-note{font-size:14px; color:var(--accent); font-weight:700; min-height:1.4em; margin-top:14px}
+
+      /* ---------- Footer ---------- */
+      footer{border-top:1px solid var(--line); padding:30px 0 40px}
+      .foot{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between; align-items:center; font-size:14px; color:var(--muted)}
+      .foot a{color:var(--ink-2); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; min-height:44px; padding:4px 2px}
+      .foot a:hover{color:var(--accent)}
+      .draft-tag{font-weight:700; letter-spacing:.05em; text-transform:uppercase; font-size:12px; border:1px solid var(--line-strong); border-radius:999px; padding:4px 10px}
+
+      /* ---------- Email dialog ---------- */
+      .dialog-backdrop{
+        position:fixed; inset:0; z-index:100; padding:16px;
+        background:rgba(10,14,12,.52);
+        display:none; align-items:flex-end; justify-content:center;
+      }
+      .dialog-backdrop.open{display:flex}
+      @media (min-width: 640px){ .dialog-backdrop{align-items:center} }
+      .dialog{
+        background:var(--surface); border:1px solid var(--line); border-radius:16px;
+        box-shadow:var(--shadow); width:100%; max-width:440px; padding:26px;
+      }
+      .dialog h3{font-size:21px; font-weight:800; letter-spacing:-.015em; margin:0 0 6px}
+      .dialog .dialog-addr{font-weight:800; font-size:18px; margin:0 0 8px; overflow-wrap:anywhere}
+      .dialog .dialog-text{font-size:15.5px; color:var(--ink-2); margin:0}
+      .dialog-actions{display:flex; flex-direction:column; gap:10px; margin-top:20px}
+      .dialog-actions .btn{justify-content:center; width:100%}
+      .dialog .copy-note{margin:12px 0 0}
+      .dialog-close{
+        margin-top:6px; width:100%; background:none; border:none; cursor:pointer;
+        font:inherit; font-size:15px; font-weight:700; color:var(--muted);
+        padding:12px; min-height:44px; border-radius:9px;
+      }
+      .dialog-close:hover{color:var(--ink); background:var(--surface-2)}
+
+      /* ---------- Mobile ---------- */
+      @media (max-width: 760px){
+        body{font-size:16.5px}
+        .hero{padding:56px 0 52px}
+        .hero-meta{margin-bottom:26px; gap:8px 10px}
+        section{padding:60px 0}
+        .sec-head{margin-bottom:34px}
+        .nav{flex-wrap:wrap; row-gap:2px; padding-top:12px; padding-bottom:10px}
+        .brand{font-size:17px}
+        nav.main{order:2; width:100%; gap:4px; flex-wrap:wrap}
+        nav.main a{padding:8px 10px; font-size:14.5px}
+        nav.main a.nav-cta{margin-left:auto; padding:8px 14px; white-space:nowrap}
+        .hero-meta .dot{display:none}
+        .build-row{grid-template-columns:40px 1fr; padding:24px 4px}
+        .build-row p{grid-column:2}
+        .work-grid{grid-template-columns:1fr}
+        .card{padding:26px 22px}
+        .about-grid{grid-template-columns:1fr; gap:30px}
+        .skills{margin-top:40px; padding-top:30px}
+        .fact dd{text-align:right}
+        .btn{width:100%; justify-content:center}
+        .contact-actions .btn{width:auto; flex:1 1 100%}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top">Sardar Ahmed<span>.</span></a>
+        <nav class="main" aria-label="Main">
+          <a href="#work">Work</a>
+          <a href="#build">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="mailto:sardarahmed.dev@gmail.com">Email me</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="wrap">
+          <p class="hero-meta">
+            <span>Karachi, Pakistan</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>BS Artificial Intelligence · SMIU · Class of 2028</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="open">Open to freelance projects and jobs</span>
+          </p>
+          <h1>I build custom software and <em>AI tools</em> of every kind.</h1>
+          <p class="hero-sub">
+            I&rsquo;m <strong>Sardar Ahmed</strong>, an AI student and builder in Karachi. If it&rsquo;s
+            software, I can build it: <strong>websites that bring customers in</strong>, chatbots and
+            <strong>AI agents that handle the busywork</strong>, automations, dashboards, and
+            <strong>custom tools shaped around the job</strong> — whatever you need built, built end to end.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#work">See my work</a>
+            <a class="btn btn-ghost" href="mailto:sardarahmed.dev@gmail.com">Get in touch</a>
+          </div>
+          <p class="hero-note">
+            Prefer code? My projects and experiments live on
+            <a href="https://github.com/SardarAhmed05" target="_blank" rel="noopener">GitHub</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- WHAT I BUILD -->
+      <section id="build" aria-labelledby="build-h">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="sec-index">01 — WHAT I BUILD</span>
+            <h2 id="build-h">If it runs in a browser or answers a message, I can build it</h2>
+            <p class="sec-lede">Broad on purpose. Most small businesses don&rsquo;t need five specialists — they need one person who can take the whole thing from idea to working product.</p>
+          </div>
+          <div class="build-list">
+            <div class="build-row reveal">
+              <span class="build-num">/01</span>
+              <h3>Websites</h3>
+              <p>Fast, mobile-friendly sites and online stores that present your business properly and turn visitors into enquiries and orders — not just a page that sits there.</p>
+            </div>
+            <div class="build-row reveal">
+              <span class="build-num">/02</span>
+              <h3>Booking systems</h3>
+              <p>Appointment and order flows that replace phone tag and paper registers — customers book themselves in, you get a clean schedule instead of a ringing phone.</p>
+            </div>
+            <div class="build-row reveal">
+              <span class="build-num">/03</span>
+              <h3>Chatbots &amp; AI agents</h3>
+              <p>Assistants that answer customer questions, handle routine requests, and do multi-step work on their own — so the same questions stop landing on you at midnight.</p>
+            </div>
+            <div class="build-row reveal">
+              <span class="build-num">/04</span>
+              <h3>Automations</h3>
+              <p>The repetitive parts of your week — copying data between tools, chasing follow-ups, generating the same report — wired together so they happen without you.</p>
+            </div>
+            <div class="build-row reveal">
+              <span class="build-num">/05</span>
+              <h3>Custom tools</h3>
+              <p>Internal dashboards, trackers, and one-off utilities shaped around how you actually work, instead of another generic subscription you have to bend around.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SELECTED WORK -->
+      <section id="work" aria-labelledby="work-h">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="sec-index">02 — SELECTED WORK</span>
+            <h2 id="work-h">Things I&rsquo;ve actually built</h2>
+            <p class="sec-lede">Real projects, with honest status labels. If something isn&rsquo;t live right now, it says so.</p>
+          </div>
+          <div class="work-grid">
+
+            <article class="card reveal">
+              <div class="card-top">
+                <div>
+                  <p class="kind">AI Agent · Personal Finance</p>
+                  <h3>Nisaab</h3>
+                </div>
+                <span class="status built">Built — not live right now</span>
+              </div>
+              <p class="prob"><span class="blabel">The problem</span>
+                Keeping track of your money in your head — or in scattered notes — means never quite knowing where it went.
+              </p>
+              <p class="desc"><span class="blabel">What I built</span>
+                A personal-finance AI agent you talk to. It reasons about your money in conversation, backed by
+                <strong>authenticated accounts, a real PostgreSQL database, and schema migrations</strong> —
+                a complete product, not a demo script.
+              </p>
+              <div class="tags">
+                <span class="tag">LangGraph</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Alembic</span>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-top">
+                <div>
+                  <p class="kind">Side Project · Film</p>
+                  <h3>Kinophile</h3>
+                </div>
+                <span class="status past">Past project</span>
+              </div>
+              <p class="prob"><span class="blabel">The problem</span>
+                Picking what to watch next usually means scrolling menus longer than the film itself.
+              </p>
+              <p class="desc"><span class="blabel">What I built</span>
+                A film recommendation app with a chatbot, KinoBot, that suggests what to watch next using
+                live movie data. Built for the love of cinema; where a lot of my agent and API work started.
+              </p>
+              <div class="tags">
+                <span class="tag">Streamlit</span>
+                <span class="tag">TMDB API</span>
+                <span class="tag">OMDb API</span>
+                <span class="tag">Groq</span>
+              </div>
+            </article>
+
+            <article class="card wide reveal">
+              <div class="card-top">
+                <div>
+                  <p class="kind">Research Internship · Current</p>
+                  <h3>ML / Applied AI Research — Alphatron</h3>
+                </div>
+                <span class="status current">Current role</span>
+              </div>
+              <p class="prob"><span class="blabel">The problem</span>
+                Counter-UAS defence needs machine learning that can detect and track aerial threats in real
+                EO/IR sensor data — not just in a clean dataset.
+              </p>
+              <p class="desc"><span class="blabel">What I do</span>
+                Alongside freelance building, I work remotely as an ML / Applied AI research intern at
+                <strong>Alphatron</strong> (connected to the NED MMSE Lab), on the EO/IR side of a
+                <strong>Counter-UAS project</strong>. It keeps my fundamentals honest: models that have to
+                work on real sensor data, not just in a notebook.
+              </p>
+              <div class="tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">EO/IR</span>
+                <span class="tag">Counter-UAS</span>
+                <span class="tag">Applied Research</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" aria-labelledby="about-h">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="sec-index">03 — ABOUT</span>
+            <h2 id="about-h">A student who ships</h2>
+          </div>
+          <div class="about-grid">
+            <div class="about-copy reveal">
+              <p>
+                I&rsquo;m in my third year of a <strong>BS in Artificial Intelligence</strong> at Sindh
+                Madressatul Islam University in Karachi — and I spend most of my time outside lectures
+                building software that people actually use.
+              </p>
+              <p>
+                I started in <strong>classical machine learning</strong>, doing the whole job end to end —
+                taking messy data, shaping it into something a model could learn from, and tuning until the
+                results held up. It taught me patience, and it taught me how models actually fail.
+              </p>
+              <p>
+                What pulled me forward was a simple question: what happens when a model stops just
+                predicting and starts <em>doing</em>? That led me into <strong>LLM-powered apps and
+                agents</strong> — software that talks to people, reasons through a task, and finishes real
+                work. These days I split my time between building those products for clients and a
+                <strong>research internship at Alphatron</strong>, where the models have to prove themselves
+                on real sensor data rather than clean benchmarks.
+              </p>
+              <p>
+                That combination is the point. I&rsquo;m not only a prompt-and-prototype builder, and not only
+                a theory student. I can build the website, the system behind it, and the AI inside it — and
+                explain every layer of what I&rsquo;ve made.
+              </p>
+            </div>
+            <div class="facts reveal">
+              <dl>
+                <div class="fact"><dt>Degree</dt><dd>BS Artificial Intelligence</dd></div>
+                <div class="fact"><dt>University</dt><dd>SMIU, Karachi</dd></div>
+                <div class="fact"><dt>Graduating</dt><dd>2028</dd></div>
+                <div class="fact"><dt>Currently</dt><dd>ML Research Intern, Alphatron</dd></div>
+                <div class="fact"><dt>Focus</dt><dd>Websites, AI tools &amp; research</dd></div>
+                <div class="fact"><dt>Based in</dt><dd>Karachi, Pakistan</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="skills reveal">
+            <h3>Tools behind the projects above</h3>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">LangGraph</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Groq</span>
+              <span class="tag">Ollama</span>
+              <span class="tag">Hugging Face</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" aria-labelledby="contact-h">
+        <div class="wrap">
+          <div class="contact-box reveal">
+            <span class="sec-index">04 — CONTACT</span>
+            <h2 id="contact-h">Have something to build?</h2>
+            <p class="avail">Open to freelance projects and jobs</p>
+            <p>
+              Tell me what you&rsquo;re trying to do — a site, a system, an automation, an idea you&rsquo;re
+              not sure is possible yet. I reply to every serious message, and I&rsquo;ll be straight with you
+              if I&rsquo;m not the right person for it.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:sardarahmed.dev@gmail.com">sardarahmed.dev@gmail.com</a>
+              <button class="btn btn-ghost" id="copyBtn" type="button">Copy email</button>
+              <a class="btn btn-ghost" href="https://github.com/SardarAhmed05" target="_blank" rel="noopener">GitHub — SardarAhmed05</a>
+              <a class="btn btn-ghost" href="https://www.fiverr.com/s/p33mL8E" target="_blank" rel="noopener">Hire me on Fiverr</a>
+              <a class="btn btn-ghost" href="https://www.upwork.com/freelancers/~0188721bd1a3169112" target="_blank" rel="noopener">Hire me on Upwork</a>
+            </div>
+            <p class="copy-note" id="copyNote" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <span>© 2026 Sardar Ahmed · Karachi, Pakistan</span>
+        <span style="display:inline-flex; gap:16px; align-items:center">
+          <a href="https://github.com/SardarAhmed05" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:sardarahmed.dev@gmail.com">Email</a>
+          <span class="draft-tag">Draft for review</span>
+        </span>
+      </div>
+    </footer>
+
+    <!-- EMAIL DIALOG: mailto: links do nothing inside the sandboxed preview
+         iframe, so every email button opens this panel instead. -->
+    <div class="dialog-backdrop" id="emailDialog" hidden>
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="emailDialogTitle">
+        <h3 id="emailDialogTitle">Email me</h3>
+        <p class="dialog-addr">sardarahmed.dev@gmail.com</p>
+        <p class="dialog-text">Pick whichever is easiest — copy the address, or open a compose window in Gmail or Outlook.</p>
+        <div class="dialog-actions">
+          <button class="btn btn-primary" id="dialogCopyBtn" type="button">Copy email address</button>
+          <a class="btn btn-ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sardarahmed.dev%40gmail.com&amp;su=Project%20enquiry" target="_blank" rel="noopener">Write in Gmail</a>
+          <a class="btn btn-ghost" href="https://outlook.live.com/mail/0/deeplink/compose?to=sardarahmed.dev%40gmail.com" target="_blank" rel="noopener">Write in Outlook</a>
+          <a class="btn btn-ghost" href="mailto:sardarahmed.dev@gmail.com" data-direct="1">Open my mail app</a>
+        </div>
+        <p class="copy-note" id="dialogNote" role="status" aria-live="polite"></p>
+        <button class="dialog-close" id="dialogCloseBtn" type="button">Close</button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var email = 'sardarahmed.dev@gmail.com';
+
+        function copyEmail(note) {
+          function done() {
+            note.textContent = 'Copied — ' + email;
+            setTimeout(function () { note.textContent = ''; }, 3200);
+          }
+          function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) { note.textContent = email; }
+            document.body.removeChild(ta);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(done, fallback);
+          } else { fallback(); }
+        }
+
+        // Contact-section copy button.
+        var btn = document.getElementById('copyBtn');
+        var note = document.getElementById('copyNote');
+        btn.addEventListener('click', function () { copyEmail(note); });
+
+        // Email dialog: intercept every mailto: link on the page (nav "Email me",
+        // hero "Get in touch", contact email button, footer "Email") and open the
+        // panel, because a bare mailto: click is a no-op in the preview iframe.
+        var dialog = document.getElementById('emailDialog');
+        var dialogNote = document.getElementById('dialogNote');
+        var closeBtn = document.getElementById('dialogCloseBtn');
+        var lastTrigger = null;
+
+        function openDialog(trigger) {
+          lastTrigger = trigger || null;
+          dialog.hidden = false;
+          dialog.classList.add('open');
+          closeBtn.focus();
+        }
+        function closeDialog() {
+          dialog.classList.remove('open');
+          dialog.hidden = true;
+          dialogNote.textContent = '';
+          if (lastTrigger) { lastTrigger.focus(); }
+        }
+
+        var mailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        for (var i = 0; i < mailLinks.length; i++) {
+          if (mailLinks[i].hasAttribute('data-direct')) { continue; }
+          mailLinks[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            openDialog(this);
+          });
+        }
+
+        document.getElementById('dialogCopyBtn').addEventListener('click', function () {
+          copyEmail(dialogNote);
+        });
+        closeBtn.addEventListener('click', closeDialog);
+        dialog.addEventListener('click', function (e) {
+          if (e.target === dialog) { closeDialog(); }
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !dialog.hidden) { closeDialog(); }
+        });
+      })();
+    </script>
+  </body>
+</html>
